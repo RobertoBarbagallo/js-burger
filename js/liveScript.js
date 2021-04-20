@@ -6,7 +6,6 @@ var coupon = document.getElementById("coupon")
 
 calculateBtn.addEventListener("click", function () {
     var checkedItems = [];
-    var cost = parseInt(50);
 
     for (var index = 0; index < ingredientsList.length; index++) {
         var ingredient = ingredientsList[index];
@@ -16,7 +15,8 @@ calculateBtn.addEventListener("click", function () {
             checkedItems.push(ingredient.value)
         }
     }
-
+    
+    var cost = parseInt(50);
 
     if (checkedItems.length > 0) {
         var target = document.getElementById("price")
@@ -26,9 +26,7 @@ calculateBtn.addEventListener("click", function () {
            var itemChecked= checkedItems[index]
            itemChecked = parseInt (itemChecked)
            
-           cost = mySum (itemChecked, cost)
-           
-           
+           cost = mySum (itemChecked, cost) 
         }    
         var boolExist = itemExist(burgerName.value)
         if (boolExist){
@@ -40,11 +38,6 @@ calculateBtn.addEventListener("click", function () {
     }else{
         alert ("Devi selezionare almeno un ingrediente speciale")
     }
-
- 
-
-   
-
 })
 
 
@@ -63,7 +56,6 @@ function mySum (addedItem, condition){
     condition += addedItem
 
     return condition
-
 }
 
 function itemExist (searchingItem) {
@@ -72,7 +64,6 @@ function itemExist (searchingItem) {
      if(searchingItem){
          control= true
      }
-
      return control
 }
 
@@ -88,10 +79,6 @@ function saleApply (element, initialPrice )
             return initialPrice
         }else{
             return initialPrice
-        }
-        
+        }    
     }
-
-    
-
 }
